@@ -1,6 +1,11 @@
+import CityInput from "./components/CityInput";
 
 function App() {
-   return <div></div>
+  return (
+    <>
+      <CityInput />
+    </>
+  );
 }
 
 export default App;

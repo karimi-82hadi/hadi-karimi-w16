@@ -1,0 +1,40 @@
+.input {
+  width: 320px;
+  margin: 80px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.input h1 {
+  font-size: 27px;
+}
+
+.inputInner {
+  width: 100%;
+  position: relative;
+  border: 1px solid var(--color-neutral-600);
+  border-radius: var(--sm-radius);
+  overflow: hidden;
+}
+
+.input input {
+  width: 100%;
+  font-size: 24px;
+  padding: 8px 12px;
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+.input label {
+  position: absolute;
+  font-size: 24px;
+  padding: 8px 12px;
+  opacity: 0.3;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  user-select: none;
+}
