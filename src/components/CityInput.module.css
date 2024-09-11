@@ -28,6 +28,10 @@
   outline: none;
 }
 
+.input input::placeholder {
+  opacity: 0.3;
+}
+
 .input label {
   position: absolute;
   font-size: 24px;
