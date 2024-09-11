@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import cities from "../cities.json";
+import cities from "../constants/cities.json";
 
 import styles from "./CityInput.module.css";
 import SearchResult from "./SearchResult";
