@@ -11,10 +11,12 @@ const CityInput = () => {
   const [cityName, setCityName] = useState("");
   const [cityFullName, setCityFullName] = useState("");
 
-  const searchHandler = (text) => {
-    const filteredCities = allCities.filter((item) => item.startsWith(text));
+  const searchHandler = (searchTerm) => {
+    const filteredCities = allCities.filter((item) =>
+      item.startsWith(searchTerm)
+    );
     setSearchedCities(filteredCities);
-    setCityFullName(text && filteredCities[0]);
+    setCityFullName(searchTerm && filteredCities[0]);
   };
 
   const keyPressHandler = (e) => {
@@ -22,12 +24,6 @@ const CityInput = () => {
       setCityName(cityFullName);
       searchHandler(cityFullName);
     }
-  };
-
-  const searchItemClickHandler = (e) => {
-    setCityName(e.target.textContent);
-    setCityFullName(e.target.textContent);
-    searchHandler(e.target.textContent);
   };
 
   return (
@@ -44,10 +40,13 @@ const CityInput = () => {
           onKeyPress={keyPressHandler}
           value={cityName}
         />
-        {!!cityName.length && (
+        {!!cityName.length && cityName !== cityFullName && (
           <SearchResult
             data={searchedCities}
-            searchItemClickHandler={searchItemClickHandler}
+            setCityName={setCityName}
+            cityFullName={cityFullName}
+            setCityFullName={setCityFullName}
+            searchHandler={searchHandler}
           />
         )}
       </div>
